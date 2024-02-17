@@ -50,6 +50,7 @@ class PlayList {
         String str = "";
         for (int i = 0; i < size; i++) {
             Track track = tracks[i];
+            // #feedback - you can use track.toString().
             str += track.getArtist() + ", " + track.getTitle() + ", " + track.getDuration() + "\n";
         }
         return str;
@@ -76,6 +77,7 @@ class PlayList {
      *  If such a track is not found, returns -1. */
     public int indexOf(String title) {
         for (int i = 0; i < size; i++) {
+            // #feedback - you should ignore upper/lower case.
             if (tracks[i].getTitle().equals(title)) {
                 return i; 
             }
@@ -122,6 +124,7 @@ class PlayList {
         if (size == 0) {
             return; // If the list is empty, do nothing
         }
+        // #feedback - you can use indexOf to find the track.
         for (int i = 0; i < size; i++) {
             if (tracks[i].getTitle().equals(title)) {
                 remove(i); 
